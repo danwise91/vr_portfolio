@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dan Wise Creates</title>
+</head>
+<body>
+<script src="aframe/aframe.min.js"></script>
+<script>
+	 AFRAME.registerComponent('set-camera', {
+    schema: {default:''},
+    init() {
+      const sky = document.querySelector('a-entity');
+      this.el.addEventListener('click', () => {
+        sky.setAttribute('rotation', this.data);
+      });
+    }
+  });
+</script>
+<a-scene>
+<a-assets>
+	 <img id="skyTexture" src="https://ucarecdn.com/06792bf9-e9fe-4708-af28-10bf7ec7e216/">
+	 <img id="headshot" src="https://ucarecdn.com/6bd0c019-a12b-48b2-bde2-50aa21ef35fe/">
+	 <img id="frogslogs" src="https://ucarecdn.com/295e1157-a859-4bcc-bd33-a8203bfb68e4/">
+	 <img id="galac" src="https://ucarecdn.com/f0350dce-b4ba-4edc-b54a-e4617c411621/">
+	 <img id="trumpy" src="https://ucarecdn.com/20e929d6-4793-437a-b65a-2373769868b9/">
+	 <img id="zen" src="https://ucarecdn.com/5f305903-2f00-41e0-91d3-c1c853095411/">
+	 <img id="hg801" src="https://ucarecdn.com/0040c388-a5b3-4c35-8883-922e7e965ceb/">
+	 <img id="hg802" src="https://ucarecdn.com/9faf79a4-c6ee-40b0-bd7d-e7f88b98990c/">
+	 <img id="hg803" src="https://ucarecdn.com/b4df5b19-1d32-420c-bb7b-01584fc000a5/">
+	 <img id="titan" src="https://ucarecdn.com/305862fd-63b5-4b77-9582-716e05fb5e72/">
+	 <img id="pax1" src="https://ucarecdn.com/8a375ed3-d498-455d-93a6-025a76cd08f6/">
+	 <img id="pax2" src="https://ucarecdn.com/b0a4a9cd-d175-4f6a-acd8-1c28bb732f98/">
+	 <img id="oswego" src="https://ucarecdn.com/13333eb1-acea-4fa8-b56e-9f5caab3d7bd/">
+	 <img id="travel" src="https://ucarecdn.com/0bcf5910-f796-4449-b04c-e90532f8ad77/">
+	 <img id="disney" src="https://ucarecdn.com/b767c477-5011-49d1-a832-2fb104257315/">
+	 <img id="packt" src="https://ucarecdn.com/3320f3a6-1e2e-4336-b3a6-a8b73dc2e4dc/">
+	 <img id="rain" src="https://ucarecdn.com/d1e095d6-3ad0-4f4e-a5b4-c1a84931c83c/">
+	 <img id="haps" src="https://ucarecdn.com/8204fa0b-99e7-4274-88a3-8857f764ff82/">
+
+	 <video id="hololens" autoplay loop="true" src="vids/GoogleCardBoard_Hololens_Experiment.mp4"></video>
+	 <video id="momentum" autoplay loop="true" src="vids/AR_MomentumLearning_App.mp4"></video>
+	 <video id="earth" autoplay loop="true" src="vids/HistoryOfEarth_AR_Test.mp4"></video>
+	 <video id="translate" autoplay loop="true" src="vids/Vuforia_PictureToWord_Translation.mp4"></video>
+</a-assets>
+
+	<a-sky src="#skyTexture" theta-length="120" radius="600"></a-sky>
+	<!-- cursor -->
+	 <a-entity camera look-controls wasd-controls>
+	<a-entity position="0 0 -3"
+                geometry="primitive: ring; radiusInner: 0.05; radiusOuter: 0.1;"
+                material="color: white; shader: flat"
+                cursor="maxDistance: 30; fuse: true">
+         <a-animation begin="fusing" easing="ease-in" attribute="material.color" fill="backwards" from="blue" to="red" dur="1500"></a-animation>  
+        <a-animation begin="fusing" easing="ease-in" attribute="scale"
+             fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+                </a-entity>               
+    </a-entity>
+	<!-- Intro Panel  -->
+	<a-image src="#headshot" width="60" height="80" position="-80 55 -140"></a-image>
+	<a-text value="Welcome To My Creations!\nPlease Run In FireFox For Best Experience!" height="500" width="500" position="-100 100 -120" color="black"></a-text>
+	<a-obj-model src="models/low-poly-mill.obj" mtl="models/low-poly-mill.mtl" height="1" width="1" position = "-5 30 -160">
+			 <a-animation attribute="rotation"
+               dur="10000"
+               fill="forwards"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+	</a-obj-model>
+	<a-text value="Hi there! I'm Dan and here is a quick 360 tour of some of my creations. My skillset predominantly lies with Unity and C# programming, however I also have skills in web development and digital marketing. I also have published E-learning courses and enjoy sharing my knowledge along with constantly learning new things. To learn more about each of my individual talents, click the buttons at the top that will take you to each condensed section. Please enjoy the tour!" height="150" width="150" position="60 50 -120" color="black"></a-text>
+	<a-text value="Unity 3D\nAnd Game Design" height="150" width="150" position="60 135 -120"></a-text>
+	<a-ring color="green" radius-outer="30" radius-inner="15" position = "100 155 -140" set-camera = "30 -100 0">
+	</a-ring>
+	<a-text value="Augmented Reality" height="150" width="150" position="-112 135 -120"></a-text>
+	<a-ring color="purple" set-camera="30 -250 0" radius-outer="30" radius-inner="15" position = "-100 155 -140">
+	</a-ring>
+	<a-text value="E-Learning Courses" height="150" width="150" position="-49 135 -120"></a-text>
+	<a-ring color="blue" set-camera="30 -190 0" radius-outer="30" radius-inner="15" position = "-25 155 -140">
+	</a-ring>
+	<a-text value="Education &\nInternational Exposure" height="150" width="150" position="120 135 -120"></a-text>
+	<a-ring color="red" set-camera="30 -150 0" radius-outer="30" radius-inner="15" position = "170 155 -140">
+	</a-ring>
+	<a-text value="General Info" height="150" width="150" color = "purple" position="15 140 -120"></a-text>
+	<a-ring color="white" radius-outer="30" radius-inner="2" position = "40 155 -140">
+	</a-ring>
+
+	<!-- Unity/Game Dev Info -->
+	<a-text value="Unity 3D & Game Development" height="250" width="250" position="200 120 -100" color="black" rotation="0 -90 0"></a-text>
+	<a-plane color="white" height="100" width="100" position="220 10 125" rotation="0 -90 0"></a-plane>
+	<a-sphere radius="5" color="white" position="220 55 80">
+		<a-animation attribute="color"
+					  dur="1000"
+					  from="white"
+					  to="yellow"
+					  repeat="indefinite"></a-animation>
+	</a-sphere>
+	<a-text height = "200" width="200" position="190 40 70" rotation="0 -90 0" value="Honors & Awards" color="black"></a-text>
+	<a-text height = "150" width="150" position="200 75 -80" rotation="0 -90 0" value="During my time spent learning Unity game development at Playcrafting NYC, I learned various programming and game design techniques to create both 2D and 3D games. After completing the Playcrafting Unity course I went on to develop my first 2D game known as HG80 with a group of fellow developers and artists. Our team went on to PAX East to exhibit our game in early 2017. Till this day I still use Unity for various projects ranging from 2D and 3D games to VR and AR projects." color="black"></a-text>
+	<a-text height = "150" width="150" position="190 0 70" rotation="0 -90 0" value="HG80 was hand selected\nto be exhibited\nduring PAX East 2017." color="black"></a-text>
+	<a-image src="#frogslogs" width="80" height="40" position="215 -35 -120" rotation="0 -90 0"></a-image>
+	<a-image src="#galac" width="80" height="40" position="215 -35 -35" rotation="0 -90 0"></a-image>
+	<a-image src="#trumpy" width="80" height="40" position="215 -80 -120" rotation="0 -90 0"></a-image>
+	<a-image src="#zen" width="80" height="40" position="215 -80 -35" rotation="0 -90 0"></a-image>
+	<a-image src="#hg801" width="50" height="50" position="215 -80 35" rotation="0 -90 0"></a-image>
+	<a-image src="#titan" width="60" height="40" position="215 -35 40" rotation="0 -90 0"></a-image>
+	<a-image src="#pax1" width="70" height="55" position="215 15 35" rotation="0 -90 0"></a-image>
+	<a-image src="#pax2" width="70" height="55" position="215 15 -55" rotation="0 -90 0"></a-image>
+	<a-image src="#hg803" width="70" height="55" position="215 15 -135" rotation="0 -90 0"></a-image>
+	<a-image src="#hg802" width="90" height="55" position="220 -80 115" rotation="0 -90 0"></a-image>
+	<!-- Business & International Info -->
+	<a-text value="Education &\nInternational Exposure" height="250" width="250" position="140 120 100" color="black" rotation="0 -170 0"></a-text>
+	<a-text value="Upon finishing my bachelors degree at SUNY Oswego in Business Marketing, I relocated to Orlando Florida where I worked at Walt Disney World in the Disney Internship. After finishing the internship I lived abroad in Busan, South Korea where I taught English and contributed articles to an expatriate magazine. During my time abroad I traveled to a total of 11 countries. Till this day I still study various languages that include Chinese, Korean, and Japanese, and enjoy learning about other cultures" height="100" width="100" position="140 70 100" color="black" rotation="0 -170 0"></a-text>
+	<a-image src="#oswego" width="40" height="20" rotation="0 -170 0" position="15 50 100"></a-image>
+	<a-image src="#travel" width="25" height="40" rotation="0 -170 0" position="15 20 100"></a-image>
+	<a-image src="#disney" width="40" height="20" rotation="0 -170 0" position="15 -15 100"></a-image>
+	<a-plane color="white" height="80" width="70" position="85 -10 100" rotation="0 -170 0"></a-plane>
+	<a-plane color="white" height="30" width="50" position="15 -45 100" rotation="0 -170 0"></a-plane>
+	<a-text value="BusanHaps Articles" height="70" width="70" position="25 -23 70" color="black" rotation="0 -170 0"></a-text>
+	<a-text value="Honors & Awards" height="100" width="100" position="80 15 70" color="black" rotation="0 -170 0"></a-text>
+	<a-link href="http://hapskorea.com/looking-back-g-star-2014/" position="15 -30 70"></a-link>
+	<a-link href="http://hapskorea.com/american-cosplayer-korea/" position="5 -30 70"></a-link>
+	<a-image src="#haps" height="20" width="20" rotation="0 -170 0" position="5 -40 70"></a-image>
+	<a-text value="1) Graduated Gum Laude" height="70" width="70" position="90 5 70" color="black" rotation="0 -170 0"></a-text>
+	<a-text value="2) Secruitary of the\nInternational Business\nUnion" height="70" width="70" position="90 -3 70" color="black" rotation="0 -170 0"></a-text>
+	<a-text value="3) Deans list during all semesters" height="70" width="70" position="90 -12 70" color="black" rotation="0 -170 0"></a-text>
+	<a-text value="4) Disney 4 Keys Awards" height="70" width="70" position="90 -18 70" color="black" rotation="0 -170 0"></a-text>
+	<a-text value="5) Published 2 articles in\nBusanHaps while abroad" height="70" width="70" position="90 -25 70" color="black" rotation="0 -170 0"></a-text>
+	<a-text value="6) Traveled to a total of 11 countries" height="70" width="70" position="90 -32 70" color="black" rotation="0 -170 0"></a-text>
+	<a-sphere radius="5" color="white" position="100 20 80">
+		<a-animation attribute="color"
+					  dur="1000"
+					  from="white"
+					  to="yellow"
+					  repeat="indefinite"></a-animation>
+	</a-sphere>
+	<!-- E-Learning Courses Info-->
+	<a-text value="E-Learning Courses" height="250" width="250" position="-5 100 150" color="black" rotation="0 -210 0"></a-text>
+	<a-text value="Currently I am working with Packt Publishing to create E-Learning courses related to AR and Game Design. Recently I have had my first E-learning course published titled 'Web AR With Javascript'. My second course will be coming soon and will involve 2D and 3D game development with Unity." height="100" width="100" position="-13 80 150" color="black" rotation="0 -210 0"></a-text>
+	<a-plane color="white" height="25" width="85" position="-55 32 150" rotation="0 -210 0"></a-plane>
+	<a-plane color="white" height="50" width="85" position="-55 -20 150" rotation="0 -210 0"></a-plane>
+	<a-text value="Honorable Mentions" height="100" width="100" position="-37 0 150" color="black" rotation="0 -210 0"></a-text>
+	<a-text value="Published the first Javascript\nAR course available on Packt." height="100" width="100" position="-30 -10 150" color="black" rotation="0 -210 0"></a-text>
+	<a-text value="Packt will distribute my content\nacross platforms such as Lynda\nand Udemy." height="100" width="100" position="-30 -30 150" color="black" rotation="0 -210 0"></a-text>
+	<a-sphere radius="5" color="white" position="-15 0 100">
+		<a-animation attribute="color"
+					  dur="1000"
+					  from="white"
+					  to="yellow"
+					  repeat="indefinite"></a-animation>
+	</a-sphere>
+	<a-image src="#packt" height="30" width="50" rotation="0 -210 0" position="-55 60 150"></a-image>
+	<a-text value="My Packt Courses" height="100" width="100" position="-37 49 150" color="black" rotation="0 -210 0"></a-text>
+	<a-text value="Web AR With Javascript" height="70" width="70" position="-17 31 150" color="black" rotation="0 -210 0"></a-text>
+	<a-link href="https://www.packtpub.com" position="-55 35 150"></a-link>
+	<!-- Augmented Reality Info -->
+	<a-text value="Augmented Reality" height="250" width="250" position="-90 70 50" color="black" rotation="0 -290 0"></a-text>
+	<a-video src="#hololens" width="40" height="40" position="-100 -35 60" rotation="0 -290 0"></a-video>
+	<a-video src="#momentum" width="40" height="40" position="-90 10 60" rotation="0 -290 0"></a-video>
+	<a-video src="#earth" width="40" height="40" position="-90 -35 20" rotation="0 -290 0"></a-video>
+	<a-video src="#translate" width="20" height="40" position="-60 -20 -10" rotation="0 -290 0"></a-video>
+	<a-plane color="white" height="50" width="55" position="-90 -35 -60" rotation="0 -290 0"></a-plane>
+	<a-text height = "80" width="80" position="-90 40 35" rotation="0 -290 0" value="I began venturing into AR development due to a fascination with the technology.\nI began following along to Youtube tutorials and than began tinkering with AR projects from those same tutorials off of Github. One such Youtuber by the name of Matthew Halburg, created an AR project using Vuforia to scan an image and retrive the word associate with that image. I turned this application into a translation app by interacting with another API. I also have some work experience in the AR field by working with a small startup known as Rain Reality. While freelancing with Rain Reality I contributed to their projects by helping to create educational augmented applications." color="black"></a-text>
+	<a-text value="Home Page" color="blue" position="-140 10 15" height="100" width="100" rotation="0 -290 0" color="black">
+	</a-text>
+	<a-image src="#rain" rotation="0 -290 0" height="50" width="50" position="-90 5 15"></a-image>
+	<a-link href="http://www.rainreality.com" position="-145 5 15"></a-link>
+
+	<a-sphere radius="5" color="white" position="-90 -15 -35">
+		<a-animation attribute="color"
+					  dur="1000"
+					  from="white"
+					  to="yellow"
+					  repeat="indefinite"></a-animation>
+	</a-sphere>
+	<a-text height = "100" width="100" position="-90 -15 -40" rotation="0 -290 0" value="Honorable Mentions" color="black"></a-text>
+	<a-text height = "100" width="100" position="-90 -35 -30" rotation="0 -290 0" value="During my time with Rain\nReality we converted a\nHoloens based app known\nas The History Of Earth to\na mobile AR application." color="black"></a-text>
+</a-scene>
+</body>
+</html>
